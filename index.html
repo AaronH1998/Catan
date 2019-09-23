@@ -3,7 +3,7 @@
     <head>
         <title> Catan Event Cards </title>
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link rel="stylesheet" href="main.css">
         <script type="text/javascript" src="buttons.js"></script>
         <script type="text/javascript" src="shuffle.js"></script>
@@ -15,43 +15,47 @@
     <body>
     
         <div id = "wrapper">
-        <h1> Catan Event Cards </h1>
-        <div id="newGameDiv">
-            <button onclick="newGame()" id="newGameButton" title = "New Game"><b>&#9733</b></button>
-        </div>
+            <h1> Catan Event Cards </h1>
+            <div id="newGameDiv">
+                <button onclick="newGame()" id="newGameButton" title = "New Game"><b>&#9733</b></button>
+            </div>
         </div>
         
         <div id="playerNames">
-        <br>
-        <div id = "playerOne">
-        Player 1: <input type="text" id="Player1"><br><br> 
+            <br>
+            <div id = "playerOne">
+                Player 1: <input type="text" id="Player1"><br><br> 
+            </div>
+            <div id = "playerTwo">
+                Player 2: <input type="text" id="Player2">&nbsp<button onclick ="addNewPlayer()" id = "addPlayerThreeButton">&nbsp+&nbsp</button><br><br> 
+            </div>
+            <div id = "playerThree" style = "display:none;">
+                Player 3: <input type="text" id="Player3">&nbsp<button onclick ="addNewPlayer()" id = "addPlayerFourButton">&nbsp+&nbsp</button>&nbsp<button onclick ="removeCurrentPlayer()" id = "removePlayerThreeButton"> &nbsp-&nbsp </button><br><br> 
+            </div>      
+            <div id = "playerFour" style = "display:none;">
+                Player 4: <input type="text" id="Player4">&nbsp<button onclick ="removeCurrentPlayer()" id = "removePlayerFourButton">&nbsp-&nbsp</button><br><br>
+            </div>
+            
+            <button onclick="initiativeButton()" id="initiativeButton" style="width: 100px; height:50px; float:right;"><b>Roll For Initiative</b></button>
+            <div style="clear:both"></div>
         </div>
-        <div id = "playerTwo">
-        Player 2: <input type="text" id="Player2">&nbsp<button onclick ="addNewPlayer()" id = "addPlayerThreeButton">&nbsp+&nbsp</button><br><br> 
-        </div>
-        <div id = "playerThree" style = "display:none;">
-        Player 3: <input type="text" id="Player3">&nbsp<button onclick ="addNewPlayer()" id = "addPlayerFourButton">&nbsp+&nbsp</button>&nbsp<button onclick ="removeCurrentPlayer()" id = "removePlayerThreeButton"> &nbsp-&nbsp </button><br><br> 
-        </div>      
-        <div id = "playerFour" style = "display:none;">
-        Player 4: <input type="text" id="Player4">&nbsp<button onclick ="removeCurrentPlayer()" id = "removePlayerFourButton">&nbsp-&nbsp</button><br><br>
-        </div>
-        
-        <button onclick="startGame()" id="startGameButton" style="width: 100px; height:50px; float:right;"><b>Roll For Initiative</b></button>
-        <div style="clear:both"></div>
-        </div>
+
+        <div id = "initiativeScreen" style = "display:none;">
+            <section id = "playerOrder">
+            </section>
+            <button onclick="startGame()" id = "startGameButton" style="width: 100px; height:50px; float:right;">Start Game</button>
         </div>
     
         <div id="cardsInterface" style="display: none;">
-        <br>
-        <section id="new"></section>
-        <section id="displayPlayerName"></section>
-        <br>
-        <section id="number" style="text-align: center; font-size: 25px; font-weight: bold;"></section>
-        <section id="event"></section>
-            <div id = "nextPlayer">
-            </div>
-            <button onclick="drawEventCard()" id="eventCardButton"><b>Draw event card </b></button>
-        <div style="clear:both"></div>
+            <br>
+            <section id="new"></section>
+            <section id="displayPlayerName"></section>
+            <br>
+            <section id="number" style="text-align: center; font-size: 25px; font-weight: bold;"></section>
+            <section id="event"></section>
+                <div id = "nextPlayer"></div>
+                <button onclick="drawEventCard()" id="eventCardButton"><b>Draw event card </b></button>
+            <div style="clear:both"></div>
         </div>
     </body>
 </html>

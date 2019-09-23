@@ -2,12 +2,14 @@ function shuffle(myArray) {
     var i,
       r,
       l = myArray.length;
+      
     while (l) {
       i = Math.floor(Math.random() * l--);
       r = myArray[l];
       myArray[l] = myArray[i];
       myArray[i] = r;
     }
+    
     return myArray;
   }
 

@@ -2,6 +2,7 @@ function rollEvent(eventList) {
     poppedEventList = eventList.pop();
     document.getElementById("event").innerHTML =
       "<b>" + poppedEventList + "</b>" + "</br>";
+      
     if (poppedEventList == "Epidemic") {
       document.getElementById("event").innerHTML +=
         "Each player receives only 1 resource for each of his cities that produces this turn.";

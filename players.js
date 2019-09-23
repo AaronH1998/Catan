@@ -1,18 +1,18 @@
 function rollForInitiative(){
     const newPlayers = JSON.parse(JSON.stringify(players));
     shuffle(players);
+
     while(newPlayers[0]!==players[0]){
       var temp = newPlayers.shift();
       newPlayers.push(temp);
     }
+
     players = newPlayers
   }
   
  function validatePlayerNames(){
     var playerNameValidation = 0;
-    players.forEach(function removeSpaces(playerName){if (!/\S/.test(playerName)){
-    playerNameValidation++;
-  }})
+    players.forEach(function removeSpaces(playerName){if (!/\S/.test(playerName)){playerNameValidation++;}})
     return playerNameValidation;
   }
   
@@ -28,6 +28,7 @@ function rollForInitiative(){
   
 function addNewPlayer(){
     numberOfPlayers++;
+
     if(document.getElementById("playerThree").style.display == "none"){
       document.getElementById("playerThree").style = "display:block";
       document.getElementById("addPlayerThreeButton").style = "display:none";
@@ -41,6 +42,7 @@ function addNewPlayer(){
   
 function removeCurrentPlayer(){
     numberOfPlayers--;
+    
     if(document.getElementById("playerFour").style.display == "none"){
       document.getElementById("Player3").value = "";
       document.getElementById("playerThree").style = "display:none";
