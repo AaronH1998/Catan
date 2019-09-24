@@ -63,7 +63,7 @@ function initiativeButton() {
       alert("Please enter valid player names");
     }else{
       rollForInitiative();
-      players.forEach(function initiative(player){document.getElementById("playerOrder").innerHTML += "<br>" + player + "<br>"});
+      initiative();
       document.getElementById("initiativeScreen").style = "display:block;";
       document.getElementById("playerNames").style = "display:none;"; 
     }
@@ -72,6 +72,15 @@ function initiativeButton() {
     alert("Please enter player names");
   }
 }
+
+function initiative(){
+  for( x in players){
+    console.log( typeof(x));
+    var y = parseInt(x) + 1;
+    document.getElementById("playerOrder").innerHTML+="<br>" + "Player " + y + ": " + players[x] + "<br>";
+  }
+}
+
 
 function newGame() {
   document.getElementById("cardsInterface").style = "display:none;";
