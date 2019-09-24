@@ -5,31 +5,16 @@ function drawEventCard() {
 
   document.getElementById("event").innerHTML = "";
 
-  if (numbers == 0) {
-    document.getElementById("new").style = "display:block;";
+  if (isNewYear()) {
+    showNewYear();
     shuffleEventCards(numbers, events);
-
-    if(players[playerCounter] == undefined){
-      document.getElementById("nextPlayer").innerHTML = "Next: " + players[0];
-    }else{
-      document.getElementById("nextPlayer").innerHTML = "Next: " + players[playerCounter];
-    }
-
+    document.getElementById("nextPlayer").innerHTML = "Next: " + players[playerCounter];
+    
   } else { 
-    document.getElementById("new").style = "display:none;";
-
-    if (players.length - 1 < playerCounter) {
-        playerCounter = 0;
-    }
-
-    if(players[playerCounter+1] == undefined){
-      document.getElementById("nextPlayer").innerHTML = "Next: " + players[0];
-    }else{
-      document.getElementById("nextPlayer").innerHTML = "Next: " + players[playerCounter + 1];
-    }
-
+    hideNewYear();
     document.getElementById("displayPlayerName").innerHTML = players[playerCounter] + "'s turn";
-    playerCounter++;
+    document.getElementById("nextPlayer").innerHTML = "Next: " + players[nextPlayerCounter];
+    getNextPlayer();
 
     if (rollNumber(numbers) == 7) {
       document.getElementById("event").innerHTML +=
@@ -37,6 +22,30 @@ function drawEventCard() {
     }else {
       rollEvent(events);
     }
+  }
+}
+
+function showNewYear(){
+  document.getElementById("new").style = "display:block;";
+}
+function hideNewYear(){
+  document.getElementById("new").style = "display:none;";
+}
+
+function isNewYear(){
+  if(numbers == 0){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+function getNextPlayer(){
+  playerCounter = nextPlayerCounter;
+  nextPlayerCounter++;
+
+  if (nextPlayerCounter > players.length - 1) {
+    nextPlayerCounter = 0;
   }
 }
 
@@ -58,7 +67,7 @@ function initiativeButton() {
       document.getElementById("initiativeScreen").style = "display:block;";
       document.getElementById("playerNames").style = "display:none;"; 
     }
-    
+
   }else{
     alert("Please enter player names");
   }
