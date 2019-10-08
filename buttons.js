@@ -9,7 +9,7 @@ function drawEventCard() {
     showNewYear();
     shuffleEventCards(numbers, events);
     document.getElementById("nextPlayer").innerHTML = "Next: " + players[playerCounter];
-    
+    getNextPlayer();
   } else { 
     hideNewYear();
     document.getElementById("displayPlayerName").innerHTML = players[playerCounter] + "'s turn";
@@ -28,6 +28,7 @@ function drawEventCard() {
 function showNewYear(){
   document.getElementById("new").style = "display:block;";
 }
+
 function hideNewYear(){
   document.getElementById("new").style = "display:none;";
 }
@@ -74,13 +75,26 @@ function initiativeButton() {
 }
 
 function initiative(){
-  for( x in players){
-    console.log( typeof(x));
-    var y = parseInt(x) + 1;
-    document.getElementById("playerOrder").innerHTML+="<br>" + "Player " + y + ": " + players[x] + "<br>";
-  }
-}
+  var diceRoll = [2,3,3,4,4,4,5,5,5,5,6,6,6,6,6,7,7,7,7,7,7,8,8,8,8,8,9,9,9,9,10,10,10,11,11,12];
+  shuffle(diceRoll);
+  var initiativeRoll = [];
 
+  for(var a = 0; a < players.length; a++){
+    initiativeRoll.unshift(diceRoll.pop());
+  }
+
+  initiativeRoll.sort(function(a, b){return a - b});
+  if(initiativeRoll[players.length-2] == initiativeRoll[players.length-1]){
+    initiativeRoll[players.length-2] = initiativeRoll[players.length-2] - 1;
+  }
+
+  for(x in players){
+    var y = parseInt(x) + 1;
+    document.getElementById("playerOrder").innerHTML+="<br>" + "Player " + ": " + players[x] + " rolled: " + initiativeRoll.pop() + "<br>";
+    shuffle(initiativeRoll);
+  }
+
+}
 
 function newGame() {
   document.getElementById("cardsInterface").style = "display:none;";
