@@ -90,7 +90,7 @@ function initiative(){
 
   for(x in players){
     var y = parseInt(x) + 1;
-    document.getElementById("playerOrder").innerHTML+="<br>" + "Player " + ": " + players[x] + " rolled: " + initiativeRoll.pop() + "<br>";
+    document.getElementById("playerOrder").innerHTML+="<br>" + "Player " + ": " + players[x] + " rolled: " + initiativeRoll.pop() + "<br><br>";
     shuffle(initiativeRoll);
   }
 
@@ -98,7 +98,7 @@ function initiative(){
 
 function newGame() {
   document.getElementById("cardsInterface").style = "display:none;";
-  document.getElementById("playerNames").style = "display:block;";
+  document.getElementById("playerNames").style = "display:inline;";
   document.getElementById("initiativeScreen").style = "display:none;";
   document.getElementById("Player1").value = "";
   document.getElementById("Player2").value = "";

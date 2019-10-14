@@ -29,28 +29,30 @@ function rollForInitiative(){
 function addNewPlayer(){
     numberOfPlayers++;
 
-    if(document.getElementById("playerThree").style.display == "none"){
-      document.getElementById("playerThree").style = "display:block";
+    if(document.getElementById("playerThree").style.visibility == "hidden"){
+      document.getElementById("playerThree").style = "visibility: visible";
       document.getElementById("addPlayerThreeButton").style = "display:none";
     }
     else{
-      document.getElementById("playerFour").style = "display:block";
+      document.getElementById("playerFour").style = "visibility: visible";
       document.getElementById("addPlayerFourButton").style = "display:none";
       document.getElementById("removePlayerThreeButton").style = "display:none";
     }
+
   }
   
 function removeCurrentPlayer(){
     numberOfPlayers--;
     
-    if(document.getElementById("playerFour").style.display == "none"){
+    if(document.getElementById("playerFour").style.visibility == "hidden"){
       document.getElementById("Player3").value = "";
-      document.getElementById("playerThree").style = "display:none";
+      document.getElementById("playerThree").style = "visibility:hidden";
       document.getElementById("addPlayerThreeButton").style = "display:inline";
     }else{
       document.getElementById("Player4").value = "";
-      document.getElementById("playerFour").style = "display:none";
+      document.getElementById("playerFour").style = "visibility:hidden";
       document.getElementById("addPlayerFourButton").style = "display:inline";
       document.getElementById("removePlayerThreeButton").style = "display:inline";
     }
+
   }

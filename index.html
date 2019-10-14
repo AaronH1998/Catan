@@ -1,61 +1,112 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <title> Catan Event Cards </title>
+
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <link rel="stylesheet" href="main.css">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--<link rel="stylesheet" href="main.css">-->
+        <link rel="stylesheet" href="new.css">
+
         <script type="text/javascript" src="buttons.js"></script>
         <script type="text/javascript" src="shuffle.js"></script>
         <script type="text/javascript" src="roll.js"></script>
         <script type="text/javascript" src="players.js"></script>
         <script type="text/javascript" src="global.js"></script>
+
     </head>
     
     <body>
     
         <div id = "wrapper">
-            <h1> Catan Event Cards </h1>
+
+            <div id = "heading">
+                <h1> Catan Event Cards </h1>
+            </div>
+
             <div id="newGameDiv">
                 <button onclick="newGame()" id="newGameButton" title = "New Game"><b>&#9733</b></button>
             </div>
-        </div>
-        
-        <div id="playerNames">
-            <br>
-            <div id = "playerOne">
-                Player 1: <input type="text" id="Player1"><br><br> 
-            </div>
-            <div id = "playerTwo">
-                Player 2: <input type="text" id="Player2">&nbsp<button onclick ="addNewPlayer()" id = "addPlayerThreeButton">&nbsp+&nbsp</button><br><br> 
-            </div>
-            <div id = "playerThree" style = "display:none;">
-                Player 3: <input type="text" id="Player3">&nbsp<button onclick ="addNewPlayer()" id = "addPlayerFourButton">&nbsp+&nbsp</button>&nbsp<button onclick ="removeCurrentPlayer()" id = "removePlayerThreeButton"> &nbsp-&nbsp </button><br><br> 
-            </div>      
-            <div id = "playerFour" style = "display:none;">
-                Player 4: <input type="text" id="Player4">&nbsp<button onclick ="removeCurrentPlayer()" id = "removePlayerFourButton">&nbsp-&nbsp</button><br><br>
-            </div>
-            
-            <button onclick="initiativeButton()" id="initiativeButton" style="width: 100px; height:50px; float:right;"><b>Roll For Initiative</b></button>
             <div style="clear:both"></div>
+            
         </div>
 
-        <div id = "initiativeScreen" style = "display:none;">
-            <section id = "playerOrder">
-            </section>
-            <button onclick="startGame()" id = "startGameButton" style="width: 100px; height:50px; float:right;">Start Game</button>
+        
+
+        <div id="playerNames">
+            <br><br><br>
+
+            <div class = "container">    
+
+                <div id = "oneAndTwo" class = "row">
+
+                    <div id = "playerOne" class = "col-sm">
+                        Player 1: <input type="text" id="Player1"><br><br>
+                    </div>
+
+                    <div id = "playerTwo" class = "col-sm">
+                        Player 2: <input type="text" id="Player2">&nbsp<button onclick ="addNewPlayer()" id = "addPlayerThreeButton">&nbsp+&nbsp</button><br><br> 
+                    </div>
+
+                </div>
+
+                <div id = "threeAndFour" class = "row">
+
+                    <div id = "playerThree" style = "visibility:hidden;" class = "col-sm">
+                        Player 3: <input type="text" id="Player3">&nbsp<button onclick ="addNewPlayer()" id = "addPlayerFourButton">&nbsp+&nbsp</button>&nbsp<button onclick ="removeCurrentPlayer()" id = "removePlayerThreeButton"> &nbsp-&nbsp </button><br><br> 
+                    </div>
+
+                    <div id = "playerFour" style = "visibility: hidden;" class = "col-sm">
+                        Player 4: <input type="text" id="Player4">&nbsp<button onclick ="removeCurrentPlayer()" id = "removePlayerFourButton">&nbsp-&nbsp</button><br><br>
+                    </div>
+
+                </div>
+
+                <button onclick="initiativeButton()" id="initiativeButton"><b>Roll For Initiative</b></button>
+                <div style="clear:both"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <div id = "initiativeScreen" style = "display:none;" class = "container">
+            <br>
+            <section id = "playerOrder"></section>
+
+            <button onclick="startGame()" id = "startGameButton">Start Game</button>
+
         </div>
     
-        <div id="cardsInterface" style="display: none;">
-            <br>
-            <section id="new"></section>
-            <section id="displayPlayerName"></section>
-            <br>
-            <section id="number" style="text-align: center; font-size: 25px; font-weight: bold;"></section>
-            <section id="event"></section>
-                <div id = "nextPlayer"></div>
-                <button onclick="drawEventCard()" id="eventCardButton"><b>Draw event card </b></button>
-            <div style="clear:both"></div>
+
+
+        <div id="cardsInterface" style="display: none;" class = "container">
+            <div id = "cardDisplay">
+                <br>
+                <section id="new"></section>
+                <br>
+                <section id="displayPlayerName"></section>
+                <br>
+                <section id="number"></section>
+                <br>
+                <section id="event"></section>
+            </div>
+            <div class = "row justify-content-end">
+                <section id = "nextPlayer" class="col-2"></section>
+            </div>
+            <div class = "row justify-content-end">
+                <button onclick="drawEventCard()" id="eventCardButton" class="col-2"><b>Draw event card </b></button>
+                <div style="clear:both"></div>
+            </div>
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     </body>
 </html>

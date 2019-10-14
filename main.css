@@ -1,116 +1,125 @@
 #wrapper{
-    height: 55px;
-    width: 100%;
-    background-color: #621708;
-  }
+  height: 55px;
+  width: 100%;
+  background-color: #621708;
+ }
   
 h1{
-    position: absolute;
-    height: 55px;
-    width: 100%;
-    text-align: left;
-    background-color: #621708;
-    color: #F6AA1C;
-    font-size: 44px;
-    margin: 0;
-    margin-top: 0;
-    border-bottom: solid #220901;
-    border-top: solid #220901;
-  }
-  
+  position: absolute;
+  height: 55px;
+  width: 100%;
+  text-align: left;
+  background-color: #621708;
+  color: #F6AA1C;
+  font-size: 40px;
+  margin: 0;
+  margin-top: 0;
+  border-bottom: solid #220901;
+  border-top: solid #220901;
+}
+
 #newGameDiv{
-position: absolute;
-top: 4px;
-right: 3px;
+  position: absolute;
+  top: 4px;
+  right: 3px;
 }
 
 body{
-font-size: 17px;
-font-family: Book Antiqua;
-color: #F6AA1C;
-margin: 0;
-background-color: #941B0C;
+  font-size: 17px;
+  font-family: Book Antiqua;
+  color: #F6AA1C;
+  margin: 0;
+  background-color: #941B0C;
 }
 
 #playerNames{
-position: absolute;
-height: 100%;
-width: 100%;
-min-height:92vh;
-max-height:92vh;
-background-color: #941B0C;
-border-top: solid #220901;
-margin-bottom: 0;
-margin: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  min-height:92vh;
+  max-height:92vh;
+  background-color: #941B0C;
+  border-top: solid #220901;
+  margin-bottom: 0;
+  margin: 0;
 }
 
 #cardsInterface{
-padding:0;
-position: absolute;
-height: 100%;
-width:100%;
-min-height:91.9vh;
-max-height:91.9vh;
-background-color:#941B0C ;
-border-top: solid #220901;
-margin-bottom: 0;
-margin-right:10px;
+  padding:0;
+  position: absolute;
+  height: 100%;
+  width:100%;
+  min-height:91.9vh;
+  max-height:91.9vh;
+  background-color:#941B0C ;
+  border-top: solid #220901;
+  margin-bottom: 0;
+  margin-right:10px;
 }
 
 button{
-font-family: Book Antiqua;
-background-color: #941B0C;
-cursor: pointer;
-border-radius: 5px;
-color: #F6AA1C;
-border: 3px solid #220901;
+  font-family: Book Antiqua;
+  background-color: #941B0C;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #F6AA1C;
+  border: 3px solid #220901;
 }
 
 input, textarea{
-background-color: #941B0C;
-color: White;
-border: solid #220901;
+  background-color: #941B0C;
+  color: White;
+  border: solid #220901;
 }
 
 #startGameButton, #initiativeButton{
-position: absolute;
-top:80%;
-right: 12px;
+  position: absolute;
+  top:80%;
+  right: 12px;
 }
 
 #eventCardButton{
-position: absolute;
-top:80%;
-right: 12px;
-width: 200px; 
-height: 50px;
+  position: absolute;
+  top:80%;
+  right: 12px;
+  width: 200px; 
+  height: 50px;
 }
 
 #newGameButton{
-height:50px;
-width:50px;
-font-size:30px;
-text-align:center;
+  height:50px;
+  width:50px;
+  font-size:30px;
+  text-align:center;
 }
 
 #addPlayerThreeButton, #addPlayerFourButton, #removePlayerThreeButton, #removePlayerFourButton{
-border-radius: 50%;
-padding:0;
-font-size:15px;
-font-family: Fantasy;
-color: #F6AA1C;
-border: 3px solid #220901;
+  border-radius: 50%;
+  padding:0;
+  font-size:15px;
+  font-family: Fantasy;
+  color: #F6AA1C;
+  border: 3px solid #220901;
 }
 
 #removePlayerThreeButton, #removePlayerFourButton{
-padding:1px;
+  padding:1px;
 }
 
 #nextPlayer{
-position: absolute;
-text-align:left;
-top:77%;
-width:200px;
-right: 7px;
-font-size:12px;
+  position: absolute;
+  text-align:left;
+  top:77%;
+  width:200px;
+  right: 7px;
+  font-size:12px;
+}
+
+@media(min-width:576px){
+  h1{
+    font-size:50px;
+  }
+
+  
+
 }

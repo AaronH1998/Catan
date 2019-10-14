@@ -1,0 +1,89 @@
+html,body{
+    font-family: Book Antiqua;
+}
+
+body{
+    font-size: 17px;
+    color: #F6AA1C;
+    margin: 0;
+    background-color: #941B0C;
+}
+
+input, textarea, button{
+    background-color: #941B0C;
+    color: white;
+    border: solid #220901;
+    border-radius: 5px;
+}
+
+button{
+    color:#F6AA1C;
+}
+
+#wrapper{
+    background-color: #621708;
+}
+
+#heading{
+    float:left;
+    height:100%;
+}
+
+#newGameDiv{
+    position: absolute;
+    right:0px;
+    height:100%;
+}
+
+#newGameButton{
+    height:50px;
+    width:50px;
+    font-size:30px;
+    text-align:center;
+}
+
+#playerNames{
+    position: absolute;
+    width:100%;
+}
+
+@media(min-width:992px){
+    #cardDisplay{
+        height:490px;
+        font-size: 25px;
+    }
+}
+
+@media(max-width: 991.98px){
+    #cardDisplay{
+        height:500px;
+    }
+}
+
+@media (max-width: 575.98px){
+    #cardDisplay{
+        height:306px;
+    }
+}
+
+#number{
+    text-align:center;
+    font-weight: bolder;
+}
+
+#nextPlayer{
+    font-size:13px;
+}
+
+#eventCardDiv{
+    border:solid;
+}
+
+#eventCardButton{
+    font-size: 20px;
+    height:50px;
+}
+
+#initiativeButton, #startGameButton,#eventCardButton,#nextPlayer {
+    float:right;
+}
