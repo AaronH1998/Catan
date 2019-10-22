@@ -26,11 +26,11 @@ function drawEventCard() {
 }
 
 function showNewYear(){
-  document.getElementById("new").style = "display:block;";
+  document.getElementById("newYear").style = "display:block;";
 }
 
 function hideNewYear(){
-  document.getElementById("new").style = "display:none;";
+  document.getElementById("newYear").style = "display:none;";
 }
 
 function isNewYear(){

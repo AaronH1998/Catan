@@ -103,9 +103,6 @@ button{
 }
 
 @media(min-height:660px){
-    body{
-        background-color:;
-    }
 
     @media(min-width:992px){
         h1{
@@ -143,11 +140,10 @@ button{
     border:solid;
 }
 
-#eventCardButton{
-    font-size: 20px;
-    height:50px;
-}
+
 
 #initiativeButton, #startGameButton,#eventCardButton,#nextPlayer {
     float:right;
+    font-size: 20px;
+    height:50px;
 }
