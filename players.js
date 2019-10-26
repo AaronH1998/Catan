@@ -1,22 +1,22 @@
 function rollForInitiative(){
-    const newPlayers = JSON.parse(JSON.stringify(players));
-    shuffle(players);
+  const newPlayers = JSON.parse(JSON.stringify(players));
+  shuffle(players);
 
-    while(newPlayers[0]!==players[0]){
-      var temp = newPlayers.shift();
-      newPlayers.push(temp);
-    }
+  while(newPlayers[0]!==players[0]){
+    var temp = newPlayers.shift();
+    newPlayers.push(temp);
+  }
 
-    players = newPlayers
-  }
+  players = newPlayers
+}
   
- function validatePlayerNames(){
-    var playerNameValidation = 0;
-    players.forEach(function removeSpaces(playerName){if (!/\S/.test(playerName)){playerNameValidation++;}})
-    return playerNameValidation;
-  }
+function validatePlayerNames(){
+  var playerNameValidation = 0;
+  players.forEach(function removeSpaces(playerName){if (!/\S/.test(playerName)){playerNameValidation++;}})
+  return playerNameValidation;
+}
   
- function getPlayerNames() {
+function getPlayerNames() {
     players.push(
       document.getElementById("Player1").value,
       document.getElementById("Player2").value,
@@ -24,7 +24,7 @@ function rollForInitiative(){
       document.getElementById("Player4").value
     );
     players = players.filter(player => player != "");
-  }
+}
   
 function addNewPlayer(){
     numberOfPlayers++;
@@ -39,7 +39,7 @@ function addNewPlayer(){
       document.getElementById("removePlayerThreeButton").style = "display:none";
     }
 
-  }
+}
   
 function removeCurrentPlayer(){
     numberOfPlayers--;
@@ -55,4 +55,4 @@ function removeCurrentPlayer(){
       document.getElementById("removePlayerThreeButton").style = "display:inline";
     }
 
-  }
+}

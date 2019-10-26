@@ -2,26 +2,17 @@ function drawEventCard() {
   if (players == 0) {
     getPlayerNames();
   }
-
-  document.getElementById("event").innerHTML = "";
   
   if (isNewYear()) {
     showNewYear();
-    shuffleEventCards(numbers, events);
+    shuffleEventCards();
     document.getElementById("nextPlayer").innerHTML = "Next: " + players[nextPlayerCounter];
-  } else { 
+  } else {
     hideNewYear();  
     getNextPlayer();
     document.getElementById("displayPlayerName").innerHTML = players[playerCounter] + "'s turn";
     document.getElementById("nextPlayer").innerHTML = "Next: " + players[nextPlayerCounter];
-  
-    
-    if (rollNumber(numbers) == 7) {
-      document.getElementById("event").innerHTML +=
-        "Robber attacks<br>1. Each player with more  than 7 cards must discard half (rounded down).<br>2. Move the robber. Draw a random resource card from any 1 player with a settlement and/or city next to the robber's new hex.";
-    }else {
-      rollEvent(events);
-    }
+    rollEvent();
   }
 }
 
@@ -34,7 +25,7 @@ function hideNewYear(){
 }
 
 function isNewYear(){
-  return numbers == 0;
+  return eventCards == 0;
 }
 
 function getNextPlayer(){
@@ -47,8 +38,6 @@ function getNextPlayer(){
 }
 
 function initiativeButton() {
-  numbers = [];
-  events = [];
   players = [];
   playerCounter = 0;
   getPlayerNames();
@@ -102,6 +91,10 @@ function newGame() {
   document.getElementById("Player4").value = "";
   document.getElementById("playerOrder").innerHTML = "";
   document.getElementById("nextPlayer").innerHTML = "";
+  eventCards = [];
+  players = [];
+  playerCounter = 0;
+  nextPlayerCounter = 0;
 }
 
 function startGame(){
