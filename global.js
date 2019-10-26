@@ -1,23 +1,22 @@
-var numbers = [];
-var events = [];
 var players = [];
+var eventCards = [];
 var playerCounter = 0;
 var nextPlayerCounter = 0;
 var numberOfPlayers = 2;
-var numberLibrary = [
+
+var diceRollDictionary = [
     {diceRoll: 2, occurrences: 1},
     {diceRoll: 3, occurrences: 2},
     {diceRoll: 4, occurrences: 3},
     {diceRoll: 5, occurrences: 4},
     {diceRoll: 6, occurrences: 5},
-    {diceRoll: 7, occurrences: 6},
     {diceRoll: 8, occurrences: 5},
     {diceRoll: 9, occurrences: 4},
     {diceRoll: 10, occurrences: 3},
     {diceRoll: 11, occurrences: 2},
     {diceRoll: 12, occurrences: 1}
-]
-var eventLibrary = [
+];
+var eventsDictionary = [
     {title:"Epidemic", occurrences: 2, description: "Each player receives only 1 resource for each of his cities that produces this turn."},
     {title:"Earthquake", occurrences: 1, description: 'Each player turns 1 of his roads sideways. You may not build roads until your turned road is repaired. The repairs cost is 1 lumber and 1 brick. Roads turned sideways are still counted towards the "longest road".'},
     {title:"Good Neighbours", occurrences: 1, description: "Each player gives the player to his left 1 resource of the giver's choice (if he has one)."},
@@ -29,8 +28,7 @@ var eventLibrary = [
     {title: "Conflict", occurrences: 1, description: 'The player with the "Largest Army" (if not claimed, the single player with the most knight cards) takes 1 resource card at random from any one player.'},
     {title: "Plentiful Year", occurrences: 1, description: "Each player may take 1 resource of their choice from the bank."},
     {title: "Catan Prospers", occurrences: 16, description: "The settlers labour. Catan prospers!"}
-]
+];
 
 
 window.onbeforeunload = function() { return ""; };
-
