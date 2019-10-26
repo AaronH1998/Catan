@@ -61,9 +61,6 @@ button{
     }
 
     @media(min-width: 578px){
-        body{
-            background-color:black;
-        }
         #cardDisplay{
             height:280px;
         }
