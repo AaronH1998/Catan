@@ -50,9 +50,6 @@ button{
 }
 
 @media(max-height:414.98px){
-    body{
-        background-color:green;
-    }
     @media(min-width:992px){
         h1{
             font-size:40px;
@@ -81,9 +78,6 @@ button{
 }
 
 @media(min-height:415px) and (max-height:659.98px){
-    body{
-        background-color:white;
-    }
     @media(min-width:992px){
         h1{
             font-size:40px;
